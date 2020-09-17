@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block banner %}
+
+{% endblock %}
+{% block maincontent  %}
+<!-- contact-us -->
+	<div class="">
+		<div class="container">
+			<div class="contact-info">
+				<form class="nortext" method="post">{% csrf_token %}
+					
+					{{form.F_Name}}
+					{{form.L_Name}}
+					{{form.Mobile}}
+					{{form.Email}}
+					{{form.message}}
+					<!-- <input type="text" name="Name" placeholder="Your Name" required>
+					<input type="text" name="Email" placeholder="Your Email" required>
+					<input type="text" name="Subject" placeholder="Subject" required>
+					<textarea placeholder="Your Message" name="Message" required></textarea>
+					 -->
+					 <br><input type="submit" value="SEND MESSAGE">
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!-- Address -->
+
+		<div class="">
+			<h3 class="tittle">ADDRESS</h3>
+			<div class="border"></div>
+
+
+			
+				<div class="container">
+					<div style="margin:  58px 77px;">
+		<!-- 				<div class="col-md-4 contact-grid text-center">
+							<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+							<p><a href="mail-to:example@mail.com">Email : example@mail.com</a></p>
+						</div> -->
+						<div class="col-md-12 contact-grid text-center">
+							<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+							<h4 style="color: #34495E">Office No 205, Lunkad sky station, datta mandir chowk, viman nagar, Pune-411014</h4>
+						</div>
+	<!-- 					<div class="col-md-4 contact-grid text-center">
+							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+							<p>Telephone : +613 0000 0000</p>
+						</div> -->
+						
+					</div><br><br>
+
+		</div>
+
+
+
+<!-- /Address -->
+
+
+	<!-- Map -->
+	<div id="contact" class="contact">
+		<div class="container">
+			<h3 class="tittle">Contact</h3>
+			<div class="border"></div>
+		</div>
+		<div class="map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d21394.73745265723!2d73.91573571615484!3d18.569936423318996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf1095d200a4888c1!2sLunkad%20Sky%20Station!5e0!3m2!1sen!2sin!4v1599066665489!5m2!1sen!2sin" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+	</div>
+<!-- /map -->
+
+<script type="text/javascript">
+
+
+</script>
+{% endblock  %}
+

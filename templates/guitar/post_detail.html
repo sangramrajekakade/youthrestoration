@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load thumbnail %}
+{% block banner %}
+{% endblock %}
+{% block maincontent  %}
+
+<style type="text/css">
+.titlestyle{
+    font-size: 170%;
+}
+</style>
+<div class="service-sec">
+     <div class="container">
+         <div class="panel-body">
+                    <div class="row ">
+
+                        <div class="clearfix visible-xs"></div>
+                        <div class="">
+                            <div class="panel">
+                                <div class="panel-body">
+                                <h4 class="titlestyle" >{{object.title}} - </h4>
+                                <p style=" color: #E8B430">By &nbsp {{ object.author }}</p> 
+                                <p>{{ object.created_at }}</p><hr>
+                                <br>{{object.description}}
+                                </div>
+                             </div>
+                         </div>
+
+                    </div>
+                 </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock  %}

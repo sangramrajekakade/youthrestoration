@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block banner %}
+
+{% endblock %}
+{% block maincontent  %}
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+
+<div class="nortext">
+
+	<div class="banner-section" style="height: 10%">
+		<section class="slider">
+			<div class="flexslider" >
+				<ul class="slides" >
+					<li>
+						<div class="slider-info">
+							<img style="height: 255px;" src="{% static 'images/hair/IMG-20200820-WA0051-removebg.png' %}" class="img-responsive" alt="">
+						</div>
+						
+					</li>
+					<li>
+						<div class="slider-info">
+							<img style="height: 255px;"  src="{% static 'images/hair/patientTwo-1.jpg' %}" class="img-responsive" alt="">
+						</div>
+						
+					</li>
+					<li>
+						<div class="slider-info">
+							<img  style="height: 255px;" src="{% static 'images/hair/patientThree.jpg' %}" class="img-responsive" alt="">
+						</div>
+						
+					</li>
+					<li>
+						<div class="slider-info">
+							<img style="height: 255px;" src="{% static 'images/hair/patientFour.jpg' %}" class="img-responsive" alt="">
+						</div>
+						
+					</li>
+				</ul>
+			</div>
+		</section>
+
+			<script defer src="{% static 'js/jquery.flexslider.js' %}">
+
+
+			</script>
+				<script type="text/javascript">
+					$(function(){
+						SyntaxHighlighter.all();
+					});
+					$(window).load(function(){
+					$('.flexslider').flexslider({
+					animation: "slide",
+					start: function(slider){
+					  $('body').removeClass('loading');
+					}
+					});
+					});
+				</script>
+</div>
+
+
+	<!--welcome-->
+		<div class="content">
+			<div class="welcome-w3ls" id ="about">
+				<div class="container">
+					<h2 class="tittle nortext"> Welcome</h2>
+						<div class="border"></div>
+					<span class="nortext">Youth Restoration is one of the Best Choice for your Hair Transplant with it's state of the art technology to provide you 100% Assured result with 25 years warranty. We have successfully transplanted more than 3.5 crores Hair Roots across 6 locations in India. Just Contact us and let us guide you with the entire process of Hair Transplant and get the best result at a very pocket friendly pricing.</span>
+				</div>
+				<div class="wel-grids">
+					<div class="col-md-3 wel-grid">
+						<img style="height: 382px;" src="{% static 'images/hair/patientFour.jpg' %}" title="Designer_girl" class="img-responsive" alt=""/>
+					</div>
+					<div class="col-md-6 wel-grid1">
+						<div class="wel-left">
+							<h4>10+</h4>
+							<h5 class="nortext" style="color: #FFFF">Centers</h5>
+							
+						</div>
+						<div class="wel-left">
+							<h4>1800+</h4>
+							<h5 class="nortext" style="color: #FFFF">satisfied clients</h5>
+							
+						</div>
+						<div class="wel-left">
+							<h4>52148+</h4>
+							<h5 class="nortext" style="color: #FFFF">website visits</h5>
+							
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-md-3 wel-grid">
+						<img style="height: 382px;" src="{% static 'images/hair/patientFive.jpg' %}" title="Designer_girl" class="img-responsive" alt=""/>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		<!--welcome-->
+
+	<div class="service-w3l" id="services">
+			<div class="container">
+				<h3 class="tittle nortext"> WHY CHOOSE US?</h3>
+				<div class="border"></div>
+				<div class="service-grids">
+					<div class="col-md-3 ser-grid">
+						<div class="ser-top">
+							<div class="con hvr-shutter-in-horizontal">
+								<i class="fa fa-shield" aria-hidden="true"></i>
+							</div>
+							<h4 class="nortext">25 Years Warranty on Hair Transplant </h4>
+							<!-- <p>Proper procedure to learn in Western (with Staff Notation) & Indian Style</p> -->
+						</div>
+					</div>
+					<div class="col-md-3 ser-grid">
+						<div class="ser-top">
+							<div class="con hvr-shutter-in-horizontal">
+								<i class="fa fa-bullhorn" aria-hidden="true"></i>
+							</div>
+							<h4 class="nortext"> Free Consultation</h4>
+							
+						</div>
+					</div>
+					<div class="col-md-3 ser-grid">
+						<div class="ser-top">
+							<div class="con hvr-shutter-in-horizontal">
+								<i class="fa fa-star" aria-hidden="true"></i>
+							</div>
+							<h4 class="nortext">Low Cost High Quality Treatment</h4>
+						</div>
+					</div>
+					<div class="col-md-3 ser-grid">
+						<div class="ser-top">
+							<div class="con hvr-shutter-in-horizontal">
+								<i class="fa fa-inr" aria-hidden="true"></i>
+							</div>
+							<h4 class="nortext">0% EMI Option Available</h4>
+
+						</div>
+					</div>
+				</div>
+		
+				</div>
+			</div>
+
+			<h3 class="tittle nortext">Offers</h3>
+			<div class="border"></div><br><br>
+
+<!-- Offers end -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<!-- Indicators -->
+
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+    {% for p in offers %}
+    {% if forloop.counter == 1 %}
+    <div class="item active">
+    {% else %}
+    <div class="item">
+    {% endif %}
+        <center><img src=" {{MEDIA_URL}}{{ p.image.url}}" alt="Image" width="460" height="345"></center>
+  <div class="carousel-caption">
+
+  </div>
+    </div>
+    {% endfor %}
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+<!-- 
+
+
+		<div class="artists-agileits" id="artists">
+			<div class="container">
+			<h3 class="tittle">Artists</h3>
+			<div class="border"></div>
+				<div class="">
+					<div class="callbacks_container">
+						<ul class="" id="">
+							<li>	 
+							{% for obj in offers %}
+								<div class="caption">
+									<div class="col-md-4 cap-left">
+										<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal3"><center>
+
+											<img src="{{MEDIA_URL}}{{ obj.image.url}}" title="Designer_girl" class="img-responsive" alt="" height="100%" width="500%" />
+
+
+
+							{% endfor %}
+									</li>
+							  
+						
+						</ul>
+							
+					</div>
+				</div>
+			</div>
+		</div> -->
+<!-- offers end -->
+
+
+		<!--Biography-->
+			<div class="" id="biography" style=" background-size: cover;
+    min-height: 575px; padding: 5em 0;	">
+				<div class="container">
+					<h3 class="tittle1 nortext" style=" color:#E8B430;">Biography</h3>
+					<div class="border"></div><br><br>
+					<div class="biography-grids">
+						<div class="col-md-6 biography-grid">
+						<img src="{% static 'images/hair/IMG-20200820-WA0051.jpg' %}" class="img-responsive" alt=""/>
+						</div>
+						<div class="col-md-6 biography-grid">
+							<h4 class="nortext" style="color: #E8B430;">About Us</h4>
+							<p style="  color: black;">At Youth Restoration we understand the need for a man to talk to someone who would listen to him as an individual who suffers. We have a team of expert consultants who are exclusively trained in all the matters related to hair transplant – this includes the whole gamete of the process, the procedure, do and don’t pre and post procedure and general care. To ensure that our team is in sync with the concepts and the logics of the whole hair transplantation system, we hire graduates from the science stream only as their grounding in biology helps them understand the nuances of hair transplantation. Above all, we take pride in our team experts who are not only hair expert consultants but are individuals with over 5 years of experience in the industry which makes them well experienced with the confusion and apprehensions of a person going in for a hair transplant. We call this team Hair Experts consultants.</p>
+							
+							<div class="clearfix"></div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		<!--Biography-->
+
+
+
+		<div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock  %}
